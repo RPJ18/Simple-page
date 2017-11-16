@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stylish Portfolio</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav class="navbar">
+		<span class="open-slide">
+		    <a href="#" id="openBtn"><i class="fa fa-bars"></i></a>
+		</span>
+	</nav>
+
+	<div id="side-menu" class="side-nav">
+        <a href="#" class="btn-close" id="closeBtn">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+	<div class="bg-header">
+		<h1 class="separate">Start Bootstrap</h1>
+		<h3>Free bootstrap themes & templates</h3>
+		<button class="btn btn-header">Find Out More</button>
+	</div>
+
+	<div class="main-content">
+		<h1>Stylish Portfolio is the perfect theme for your next project!</h1>
+		<!-- <hr> tarea: averiguar como manipular una etiqueta hr-->
+		<p>
+			This theme features some wonderful photography courtesy of Death to the Stock Photo.
+		</p>
+	</div>
+
+	<div class="our-services">
+		<h1>Our Services</h1>
+		<hr class="small">
+		<div class="icon-group">
+			<div class="icon-1" id="icon-fade">
+				<i class="fa fa-cloud"></i>
+				<h1 class="icon-title">Cloud Storage</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				<button class="btn-icon">Learn More</button>
+			</div>
+			<div class="icon-2" id="icon-fade">
+				<i class="fa fa-user"></i>
+				<h1 class="icon-title">Management</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				<button class="btn-icon">Learn More</button>
+			</div>
+			<div class="icon-3" id="icon-fade">
+				<i class="fa fa-superpowers"></i>
+				<h1 class="icon-title">Skills</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				<button class="btn-icon">Learn More</button>
+			</div>
+			<div class="icon-4" id="icon-fade">
+				<i class="fa fa-car"></i>
+				<h1 class="icon-title">Velocity</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				<button class="btn-icon">Learn More</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="img-info">
+		<h1>VERTICALLY CENTER TEXT</h1>
+	</div>
+
+	<div class="our-work">
+		<h1>Our Work</h1>
+		<hr class="small-2">
+		<div class="img-group">
+			<div class="col-1">
+				<img src="img/portfolio-1.jpg" alt="">
+			</div>
+			<div class="col-2">
+				<img src="img/portfolio-2.jpg" alt="">
+			</div>
+			<div class="col-3">
+				<img src="img/portfolio-3.jpg" alt="">
+			</div>
+			<div class="col-4">
+				<img src="img/portfolio-4.jpg" alt="">
+			</div>
+		</div>
+		<button class="btn-images">View More Items</button>
+	</div>
+
+	<div class="call">
+		<h1>The buttons below are impossible to resist.</h1>
+		<div class="wrapper">
+			<div class="col-b-1">
+				<button class="btn-1" id="buttonAnimated-1">Click Me!</button>
+			</div>
+			<div class="col-b-2">
+				<button class="btn-2" id="buttonAnimated-2">Look At Me!</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="img-bg">
+		<div id="map"></div>
+	</div>
+
+	<div class="footer">
+		<h1>Juan Rebolledo</h1>
+		<p>3481 Crime Alley</p>
+		<p>Gotham city, NJ 90210</p>
+		<p><i class="fa fa-phone"></i> (123) 456-7890</p>
+		<p><i class="fa fa-envelope"></i> name@example.com</p>
+		<div class="social-icons">
+			<i class="fa fa-facebook"></i>
+			<i class="fa fa-twitter"></i>
+			<i class="fa fa-github"></i>
+		</div>
+		<p class="copyright">Copyright © RPJ18 2017</p>
+	</div>
+	
+	<script>
+		function initMap() {
+			var newYork = {lat: 40.7142700, lng:-74.0059700};
+			var map = new google.maps.Map(document.getElementById('map'), {
+			          zoom: 13,
+			          center: newYork
+			        });
+		}
+	</script>
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC624NvlRqqMqA4iedtN2BOn3mObeeo_fY&callback=initMap">
+    </script>
+    <script>
+    	let openBtn = document.querySelector('#openBtn'),
+    		closeBtn = document.querySelector('#closeBtn'),
+    		btnAnimated1 = document.querySelector('#buttonAnimated-1'),
+    		btnAnimated2 = document.querySelector('#buttonAnimated-2');
+
+    	openBtn.addEventListener('click', openSlideMenu);
+    	closeBtn.addEventListener('click', closeSlideMenu);
+
+    	btnAnimated1.addEventListener('mouseenter', animateBtn1);
+    	btnAnimated2.addEventListener('mouseenter', animateBtn2);
+
+    	function animateBtn1() {
+    		btnAnimated1.className = "btn-1 animated flipInX";
+    	}
+
+    	function animateBtn2() {
+    		btnAnimated2.className = "btn-2 animated flipInY";
+    	}
+
+        function openSlideMenu() {
+            document.getElementById('side-menu').style.width = '250px';
+            document.getElementById('main').style.marginLeft = '250px';
+        }
+
+        function closeSlideMenu() {
+            document.getElementById('side-menu').style.width = '0px';
+            document.getElementById('main').style.marginLeft = '0px';
+        }
+    </script>
+</body>
+</html>
